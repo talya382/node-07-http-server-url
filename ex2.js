@@ -7,3 +7,9 @@
 const http = require("http");
 
 // write your code here
+const PORT = 3000;
+
+http.createServer((req, res) => {
+    res.end(` You used method: ${req.method}`);
+    return;
+}).listen(PORT);
