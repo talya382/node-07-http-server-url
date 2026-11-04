@@ -9,3 +9,15 @@
 const http = require("http");
 
 // write your code here
+const PORT = 3000;
+http
+  .createServer((req, res) => {
+    if (req.method === 'GET' && req.url === '/hello') {
+      res.end("Hello from GET");
+    } else if (req.method === 'POST' && req.url === '/hello') {
+      res.end("Hello from POST");
+    } else {
+      res.end("Not supported");
+    }
+  })
+  .listen(PORT);
