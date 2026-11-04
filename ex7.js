@@ -10,4 +10,14 @@
 
 const http = require("http");
 
-// write your code here
+// write your code here (create the server and call server.listen(3000))
+const PORT = 3000;
+
+http
+  .createServer((req, res) => {
+    console.log(`Method: ${req.method}`);
+    console.log(`URL: ${req.url}`);
+    console.log(`HTTP Version: ${req.httpVersion}`);
+    res.end("Hello from Node Server!");
+  })
+  .listen(PORT);
